@@ -13,21 +13,24 @@ export class Speech extends React.Component {
   recognition = null;
 
   componentDidMount() {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    this.recognition = new SpeechRecognition();
-    this.recognition.continuous = true;
-    this.recognition.interimResults = true;
-
-    this.recognition.onstart = () => {
-      this.setState({ transcribing: true, })
+    if (this.state.speechEnabled) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      this.recognition = new SpeechRecognition();
+      this.recognition.continuous = true;
+      this.recognition.interimResults = true;
+  
+      this.recognition.onstart = () => {
+        this.setState({ transcribing: true, })
+      }
+      this.recognition.onend = () => {
+        this.setState({ transcribing: false, })
+      }
+      this.recognition.onresult = this.onSpeechResult;
     }
-    this.recognition.onend = () => {
-      this.setState({ transcribing: false, })
-    }
-    this.recognition.onresult = this.onSpeechResult;
   }
 
   startRecognition = () => {
+    if (!this.recognition) return;
     if (this.state.transcribing) {
       this.recognition.stop();
       return;

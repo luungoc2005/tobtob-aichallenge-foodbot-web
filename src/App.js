@@ -16,12 +16,19 @@ export const AppContext = createContext(DEFAULT_STATE);
 class App extends React.Component {
   state = {
     ...DEFAULT_STATE,
-    addToCart: this.addToCart,
+  }
+
+  componentDidMount() {
+    this.setState({
+      addToCart: this.addToCart,
+
+    })
   }
 
   addToCart = item => {
     this.setState({
-      cart: [...this.state.cart, 
+      cart: [
+        ...this.state.cart, 
         {id: v4(), ...item},
       ]
     })
