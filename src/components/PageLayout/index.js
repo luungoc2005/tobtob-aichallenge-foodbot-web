@@ -22,7 +22,7 @@ export const PageLayout = ({ children }) => <Layout>
           </Col>
           <Col span={6} style={{ textAlign: 'right' }}>
             <HandTrack />
-            <Speech />
+            {/* <Speech /> */}
           </Col>
         </Row>
         {children}
