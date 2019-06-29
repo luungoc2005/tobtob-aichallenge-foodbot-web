@@ -2,6 +2,8 @@ import React, { createRef } from 'react';
 import { Button, Modal, Row } from 'antd';
 
 import Messages from '../Messages';
+import Speech from '../Speech';
+
 import * as handTrack from 'handtrackjs';
 import * as Instascan from 'instascan';
 
@@ -139,6 +141,7 @@ export class HandTrack extends React.Component {
       >
         <Row>
           <Messages />
+          <Speech/>
         </Row>
         <Row>
           {this.state.modelLoading && <div>Loading model....</div>}

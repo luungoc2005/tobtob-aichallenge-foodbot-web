@@ -8,6 +8,7 @@ import AppRouter from './routes';
 
 const DEFAULT_STATE = {
   cart: [],
+  addToCart: () => null,
 }
 
 export const AppContext = createContext(DEFAULT_STATE);

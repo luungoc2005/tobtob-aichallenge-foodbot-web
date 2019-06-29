@@ -2,7 +2,9 @@ import React from 'react';
 
 import Messages from '../Messages';
 import Cart from '../Cart';
+
 import HandTrack from '../HandTrack';
+import Speech from '../Speech';
 
 import { Layout, Row, Col } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
@@ -20,6 +22,7 @@ export const PageLayout = ({ children }) => <Layout>
           </Col>
           <Col span={6} style={{ textAlign: 'right' }}>
             <HandTrack />
+            <Speech />
           </Col>
         </Row>
         {children}
