@@ -79,10 +79,12 @@ export class HandTrack extends React.Component {
             this.canvasContext = this.canvasElement.current.getContext("2d");
           }
           if (this.qrVideoElement.current) {
-            // this.qrScanner = new Instascan.Scanner({
-            //   video: this.qrVideoElement.current,
-            // });
-            // this.qrScanner.addListener('scan', this.onQrScanned);
+            this.qrScanner = new Instascan.Scanner({
+              video: this.qrVideoElement.current,
+              backgroundScan: false,
+              scanPeriod: VIDEO_INTERVAL,
+            });
+            this.qrScanner.addListener('scan', this.onQrScanned);
           }
           if (status) {
             this.runDetection();
