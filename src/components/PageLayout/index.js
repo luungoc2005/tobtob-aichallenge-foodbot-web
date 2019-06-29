@@ -22,14 +22,14 @@ export const PageLayout = ({ children }) => <Layout>
           </Col>
           <Col span={6} style={{ textAlign: 'right' }}>
             <HandTrack />
-            {/* <Speech /> */}
+            <Speech />
           </Col>
         </Row>
         {children}
       </div>
       <Footer style={{ textAlign: 'center' }}>Created for VAGC 2019 by luungoc2005</Footer>
     </Content>
-    <Sider>
+    <Sider width={500}>
       <Cart />
     </Sider>
   </Layout>

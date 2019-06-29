@@ -13,7 +13,7 @@ export const FoodItem = ({ id }) => {
         <Button block style={{ height: 'initial' }}
           onClick={() => context.addToCart(item)}
         >
-          <div>{item.name}</div>
+          <div style={{ overflowWrap: 'break-word', whiteSpace: 'initial' }}>{item.name}</div>
           <small>{item.price},000</small>
         </Button>
       </div>}

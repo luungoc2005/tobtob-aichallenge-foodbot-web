@@ -141,7 +141,7 @@ export class HandTrack extends React.Component {
       >
         <Row>
           <Messages />
-          <Speech/>
+          {/* <Speech/> */}
         </Row>
         <Row>
           {this.state.modelLoading && <div>Loading model....</div>}
