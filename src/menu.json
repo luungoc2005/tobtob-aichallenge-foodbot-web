@@ -1,0 +1,169 @@
+[{
+    "intent_name": "vn_springroll_veggie",
+    "name": "Fresh Vietnamese Spring roll - 3pcs (Veggie)",
+    "price": 40,
+    "kcal": 255
+  },
+  {
+    "intent_name": "vn_springroll_traditional",
+    "name": "Fresh Vietnames Spring roll - 3pcs (Traditonal)",
+    "price": 50,
+    "kcal": 255
+  },
+  {
+    "intent_name": "vn_springroll_shrimp",
+    "name": "Fresh Vietnames Spring roll - 3pcs (shripm)",
+    "price": 60,
+    "kcal": 255
+  },
+  {
+    "intent_name": "mandarin_chicken_salad",
+    "name": "Mandarin Chicken salad",
+    "price": 70,
+    "kcal": 300
+  },
+  {
+    "intent_name": "broccoli_bacon_salad",
+    "name": "Broccoli and Bacon salad",
+    "price": 75,
+    "kcal": 300
+  },
+  {
+    "intent_name": "strawberry_spinach_salad",
+    "name": "Strawberry Spinach salad",
+    "price": 75,
+    "kcal": 300
+  },
+  {
+    "intent_name": "veggie_meatbbq_rice",
+    "name": "Veggie Meat BBQ with rice",
+    "price": 100,
+    "kcal": 380
+  },
+  {
+    "intent_name": "Hainanese_chicken_rice",
+    "name": "Hainanese Chicken rice",
+    "price": 100,
+    "kcal": 400
+  },
+  {
+    "intent_name": "friedrice_beef_prickles",
+    "name": "Fried Rice with Beef and Pickles",
+    "price": 120,
+    "kcal": 450
+  },
+  {
+    "intent_name": "salmon_rice",
+    "name": "Lemon Baked Salmon with rice",
+    "price": 150,
+    "kcal": 300
+  },
+  {
+    "intent_name": "tuna_pasta",
+    "name": "Tuna pasta",
+    "price": 150,
+    "kcal": 350
+  },
+  {
+    "intent_name": "shrimp_pasta",
+    "name": "Shirmp pasta",
+    "price": 150,
+    "kcal": 300
+  },
+  {
+    "intent_name": "cajunchicken_pasta",
+    "name": "Cajun Chicken pasta",
+    "price": 120,
+    "kcal": 380
+  },
+  {
+    "intent_name": "eggplant_sandwich",
+    "name": "Eggplant sandwich",
+    "price": 50,
+    "kcal": 270
+  },
+  {
+    "intent_name": "vn_banhmi_chicken",
+    "name": "Banh mi Vietnamese style with chicken",
+    "price": 70,
+    "kcal": 350
+  },
+  {
+    "intent_name": "vn_banhmi_beef",
+    "name": "Banh mi Vietnamses style with beef",
+    "price": 70,
+    "kcal": 380
+  },
+  {
+    "intent_name": "milk_soya",
+    "name": "Soya Milk",
+    "price": 30,
+    "kcal": 75
+  },
+  {
+    "intent_name": "milk_almond",
+    "name": "Almond milk",
+    "price": 50,
+    "kcal": 75
+  },
+  {
+    "intent_name": "milk_fresh",
+    "name": "Fresh Milk",
+    "price": 50,
+    "kcal": 200
+  },
+  {
+    "intent_name": "coffee_black",
+    "name": "Black coffee",
+    "price": 30,
+    "kcal": 60
+  },
+  {
+    "intent_name": "coffee_soya",
+    "name": "Coffee with Soya Milk",
+    "price": 50,
+    "kcal": 120
+  },
+  {
+    "intent_name": "coffee_fmilk",
+    "name": "Coffee with Fresh milk",
+    "price": 50,
+    "kcal": 150
+  },
+  {
+    "intent_name": "coffee_cmilk",
+    "name": "Coffee with condensed milk",
+    "price": 50,
+    "kcal": 200
+  },
+  {
+    "intent_name": "mixfruit",
+    "name": "Mix fruit",
+    "price": 40,
+    "kcal": 150
+  },
+  {
+    "intent_name": "mixfruit_yogurt",
+    "name": "Mix Fruit with yougurt",
+    "price": 50,
+    "kcal": 250
+  },
+  {
+    "intent_name": "pudding_mango",
+    "name": "Mango pudding",
+    "price": 30,
+    "kcal": 150
+  },
+  {
+    "intent_name": "pudding_strawberry",
+    "name": "Strawberry pudding",
+    "price": 30,
+    "kcal": 150
+  },
+  {
+    "intent_name": "pudding_vanilla",
+    "name": "Vanilla pudding",
+    "price": 30,
+    "kcal": 150
+  }
+]

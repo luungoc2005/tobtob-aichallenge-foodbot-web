@@ -1,9 +1,14 @@
 import React from 'react';
+
+import PageLayout from './components/PageLayout';
+
 import AppRouter from './routes';
 
 function App() {
   return (
-    <AppRouter />
+    <PageLayout>
+      <AppRouter />
+    </PageLayout>
   );
 }
 
