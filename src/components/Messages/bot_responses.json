@@ -1,0 +1,250 @@
+[
+  {
+    "name": "pudding_vanilla",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "pudding_strawberry",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "pudding_mango",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "pudding",
+    "response": "Please choose between: mango, strawberry or vanilla?"
+  },
+  {
+    "name": "mfruit",
+    "response": "Do you want to add yogurt or not?"
+  },
+  {
+    "name": "mixfruit",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "mixfruit_yogurt",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "coffee_cmilk",
+    "response": "Hot or cold?"
+  },
+  {
+    "name": "coffee_fmilk",
+    "response": "Hot or cold?"
+  },
+  {
+    "name": "coffee_soya",
+    "response": "Hot or cold?"
+  },
+  {
+    "name": "coffee_milk",
+    "response": "You want to add soya milk, fresh milk or condensed milk??"
+  },
+  {
+    "name": "coffee_black",
+    "response": "Do you want to add sugar?"
+  },
+  {
+    "name": "coffee",
+    "response": "You want black coffee or coffee with milk??"
+  },
+  {
+    "name": "no_spicy_cucumber_bm",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_spicy_yes_cucumber",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "spicy_cucumber",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "yes_spicy_no_cucumber",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_cucumber_bm",
+    "response": "Spicy or not?"
+  },
+  {
+    "name": "cucumber_bm",
+    "response": "Spicy or not?"
+  },
+  {
+    "name": "no_spicy",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "spicy",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_sugar_no_ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "sugar_ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_sugar_yes_ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "sugar_no_ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "ice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "no_sugar",
+    "response": "Hot or cold?"
+  },
+  {
+    "name": "sugar",
+    "response": "Hot or cold?"
+  },
+  {
+    "name": "milk_fresh",
+    "response": "Sugar or not?"
+  },
+  {
+    "name": "milk_soya",
+    "response": "Sugar or not?"
+  },
+  {
+    "name": "milk_almond",
+    "response": "Sugar or not?"
+  },
+  {
+    "name": "milk",
+    "response": "Soya milk, Almond milk or fresh milk?"
+  },
+  {
+    "name": "drink_dessert",
+    "response": "Please choose between milk, coffee, fruit and pudding?"
+  },
+  {
+    "name": "vn_banhmi_beef",
+    "response": "Add cucumber or not?"
+  },
+  {
+    "name": "vn_banhmi_chicken",
+    "response": "Add cucumber or not?"
+  },
+  {
+    "name": "vn_banhmi",
+    "response": "Beef or chicken?"
+  },
+  {
+    "name": "eggplant_sandwich",
+    "response": "Spicy or not?"
+  },
+  {
+    "name": "pasta",
+    "response": "Please choose your pasta?"
+  },
+  {
+    "name": "sandwich",
+    "response": "Eggplant sandwich or Banh mi Vietnamese style?"
+  },
+  {
+    "name": "cajunchicken_pasta",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "shrimp_pasta",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "tuna_pasta",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "Rice",
+    "response": "Please choose your rice?"
+  },
+  {
+    "name": "main_courses",
+    "response": "Please choose your main dishes, we have rice, pasta and sandwich?"
+  },
+  {
+    "name": "friedrice_beef_prickles",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "hainanese_chicken_rice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "veggie_meatbbq_rice",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "strawberry_spinach_salad",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "broccoli_bacon_salad",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "mandarin_chicken_salad",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "Salad",
+    "response": "Please choose your salad? We have Mandarin Chicken salad, Broccoli Bacon salad and Strawberry Spinach salad"
+  },
+  {
+    "name": "vn_springroll_shrimp",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "vn_springroll_traditional",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "vn_springroll_veggie",
+    "response": "How many do you want?"
+  },
+  {
+    "name": "vietnamese_spring_rolls",
+    "response": "Please choose between veggie spring rolls, traditional spring rolls and shrimp spring rolls?"
+  },
+  {
+    "name": "starter",
+    "response": "Please choose your Appetizer, we have Fresh Vietnamese spring rolls and Salads?"
+  },
+  {
+    "name": "Goodbyes",
+    "response": ""
+  },
+  {
+    "name": "Greetings",
+    "response": ""
+  },
+  {
+    "name": "quantity",
+    "response": "Do you want to order anything else?"
+  },
+  {
+    "name": "no_end",
+    "response": "Your order is finished. Please check the price and calories below"
+  },
+  {
+    "name": "yes_order_more",
+    "response": "Please order your food"
+  }
+]

@@ -19,7 +19,7 @@ export const Cart = () => <AppContext.Consumer>
           (context.cart.map(item => item.qTy * item.price).reduce((a, b) => a + b, 0)).toFixed(3)
         }</Col>
       </Row>}
-      renderItem={(item) => <List.Item key={item.id}>
+      renderItem={(item) => <List.Item key={item.id} style={{ flexDirection: 'column' }}>
         <Row style={{ color: 'white', width: '100%' }}>
           <Col span={18}>
             <Button ghost shape="circle" icon="close" size="small" 
@@ -32,11 +32,12 @@ export const Cart = () => <AppContext.Consumer>
               min={1}
               defaultValue={item.qTy || 1}
               onChange={(value) => context.onQtyChange(item.id, value)}
+              value={item.qTy}
             />
           </Col>
         </Row>
-        {item.notes && <Row>
-          <small>{item.notes}</small>
+        {item.notes && <Row style={{ width: '100%' }}>
+          <small style={{ color: 'white' }}>{item.notes}</small>
         </Row>}
       </List.Item>}
     />

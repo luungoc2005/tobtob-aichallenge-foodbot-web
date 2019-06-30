@@ -1,5 +1,10 @@
 import io from 'socket.io-client';
 
-export const socket = io('http://localhost:4321');
+let socket = null;
 
-export default socket
+export const connect = () => {
+  socket = io('http://localhost:4321')
+  return socket
+}
+
+export default connect;

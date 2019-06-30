@@ -11,6 +11,8 @@ const DEFAULT_STATE = {
   addToCart: () => null,
   onQtyChange: () => null,
   onRemoveItem: () => null,
+  onPropChange: () => null,
+  onChangeItem: () => null,
 }
 
 export const AppContext = createContext(DEFAULT_STATE);
@@ -25,6 +27,8 @@ class App extends React.Component {
       addToCart: this.addToCart,
       onQtyChange: this.onQtyChange,
       onRemoveItem: this.onRemoveItem,
+      onPropChange: this.onPropChange,
+      onChangeItem: this.onChangeItem,
     })
 
     // from Ohmni API
@@ -50,6 +54,14 @@ class App extends React.Component {
     })
   }
 
+  onPropChange = (id, propName, value) => {
+    this.setState({
+      cart: this.state.cart.map(item => item.id === id
+        ? {...item, [propName]: value,}
+        : item)
+    })
+  }
+  
   onQtyChange = (id, value) => {
     this.setState({
       cart: this.state.cart.map(item => item.id === id
@@ -61,6 +73,14 @@ class App extends React.Component {
   onRemoveItem = (id) => {
     this.setState({
       cart: this.state.cart.filter(item => item.id !== id)
+    })
+  }
+
+  onChangeItem = (id, newItem) => {
+    this.setState({
+      cart: this.state.cart.map(item => item.id === id
+        ? {...item, qTy: 1, ...newItem}
+        : item)
     })
   }
 

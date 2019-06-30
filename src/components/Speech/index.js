@@ -8,6 +8,7 @@ export class Speech extends React.Component {
     speechEnabled: ('webkitSpeechRecognition' in window),
     transcribing: false,
     transcript: '',
+    intermediate_transcript: '',
   }
 
   recognition = null;
@@ -42,27 +43,40 @@ export class Speech extends React.Component {
 
   onSpeechResult = (event) => {
     let final_transcript = '';
+    let intermediate_transcript = '';
 
     for (let i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         final_transcript += event.results[i][0].transcript;
       }
+      else {
+        intermediate_transcript += event.results[i][0].transcript;
+      }
     }
     final_transcript = capitalize(final_transcript);
+    if (final_transcript) {
+      if (this.props.onFinalTranscript) {
+        this.props.onFinalTranscript(final_transcript)
+      }
+    }
+    else {
+      if (this.props.onIntermediateTranscript) {
+        this.props.onIntermediateTranscript(intermediate_transcript)
+      }
+    }
 
-    this.setState({ transcript: final_transcript })
+    this.setState({ transcript: final_transcript, intermediate_transcript });
   }
   
   render() {
-    const { speechEnabled, transcribing, transcript } = this.state;
+    const { speechEnabled, transcribing, transcript, intermediate_transcript } = this.state;
     if (!speechEnabled) {
       return <span>Web Speech API is not available on your browser.</span>
     }
     else {
       return <>
-        <Button onClick={this.startRecognition}>Start/Stop</Button>
-        <div>Transcribing: {transcribing}</div>
-        <div>{transcript}</div>
+        <Button onClick={this.startRecognition}>{transcribing ? 'Stop Listening' : 'Start Listening'}</Button>
+        {!this.props.hideTranscript && <div><span>{transcript}</span><span>{' ' + intermediate_transcript}</span></div>}
       </>
     }
   }
