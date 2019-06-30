@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
-import { Comment, Icon, Tooltip, Avatar } from 'antd';
+import { Comment, Row, Col, Icon, Tooltip, Avatar } from 'antd';
 
 import { v4 } from 'uuid';
 
 import { AppContext } from '../../App';
 
+import HandTrack from '../HandTrack';
 import Speech from '../Speech';
 import BotHandler from './BotHandler';
 
@@ -13,10 +14,21 @@ const DEFAULT_MESSAGES = [
   {
     id: v4(),
     author: 'Bot',
-    content: 'Welcome. Please select your item from the menu.',
+    content: 'Greeting!',
+    complete: true,
+  },
+  {
+    id: v4(),
+    author: 'Bot',
+    content: 'How may I serve you today?. Please select your item from the menu.',
     complete: true,
   }
 ]
+
+export const MessagesContext = createContext({
+  messageHistory: DEFAULT_MESSAGES,
+  addUserMessage: () => null,
+})
 
 export class Messages extends React.Component {
   state = {
@@ -24,6 +36,24 @@ export class Messages extends React.Component {
   }
 
   currentMessageId = null;
+
+  componentDidMount() {
+    this.setState({
+      addUserMessage: this.addUserMessage,
+    })
+  }
+
+  addUserMessage = (value) => {
+    const { messageHistory } = this.state;
+    this.setState({
+      messageHistory: [...messageHistory, { 
+        id: v4(),
+        author: 'User',
+        content: value,
+        complete: true,
+      }]
+    })
+  }
 
   onFinalTranscript = (value) => {
     const { messageHistory } = this.state;
@@ -35,7 +65,6 @@ export class Messages extends React.Component {
       })
       this.currentMessageId = null;
     }
-    // handle action here
   }
 
   onIntermediateTranscript = (value) => {
@@ -78,7 +107,7 @@ export class Messages extends React.Component {
     const { messageHistory } = this.state;
     return (
       <>
-        {messageHistory && messageHistory.slice(-4).map((message, idx) => 
+        {messageHistory && messageHistory.slice(-5).map((message, idx) => 
         <React.Fragment key={message.id}>
           <div
             style={{ 
@@ -96,19 +125,21 @@ export class Messages extends React.Component {
         </React.Fragment>)}
         <div style={{ height: 10 }} />
         <AppContext.Consumer>
-          {context => 
-            <BotHandler 
-              messageHistory={messageHistory} 
-              onBotResponse={this.onBotResponse}
-              {...context}
-            />
+          {context => <Row>
+              <Speech 
+                onIntermediateTranscript={this.onIntermediateTranscript}
+                onFinalTranscript={this.onFinalTranscript}
+                hideTranscript={true}
+              />
+              <HandTrack addUserMessage={this.addUserMessage} {...context} />
+              <BotHandler 
+                messageHistory={messageHistory} 
+                onBotResponse={this.onBotResponse}
+                {...context}
+              />
+            </Row>
           }
         </AppContext.Consumer>
-        <Speech 
-          onIntermediateTranscript={this.onIntermediateTranscript}
-          onFinalTranscript={this.onFinalTranscript}
-          hideTranscript={true}
-        />
       </>
     )
   }

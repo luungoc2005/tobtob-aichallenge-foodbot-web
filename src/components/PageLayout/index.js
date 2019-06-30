@@ -1,12 +1,7 @@
 import React from 'react';
 
-import { AppContext } from '../../App';
-
 import Messages from '../Messages';
 import Cart from '../Cart';
-
-import HandTrack from '../HandTrack';
-import Speech from '../Speech';
 
 import { Layout, Row, Col } from 'antd';
 
@@ -20,15 +15,7 @@ export const PageLayout = ({ children }) => <Layout>
     <Content style={{ padding: '0 50px', marginTop: 32 }}>
       <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
         <Row>
-          <Col span={18}>
-            <Messages />
-          </Col>
-          <Col span={6} style={{ textAlign: 'right' }}>
-            <AppContext.Consumer>
-              {context => <HandTrack {...context} />}
-            </AppContext.Consumer>
-            {/* <Speech /> */}
-          </Col>
+          <Messages />
         </Row>
         {children}
       </div>

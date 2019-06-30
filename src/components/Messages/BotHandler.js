@@ -185,7 +185,9 @@ export class BotHandler extends React.Component {
   }
 
   render() {
-    return (<div />)
+    return (<div>
+      {this.props.children}
+    </div>)
   }
 }
 

@@ -1,6 +1,8 @@
 import React, { createRef } from 'react';
 import { Button, Modal, Row } from 'antd';
 
+import menu from '../../menu.json';
+
 import Messages from '../Messages';
 import Speech from '../Speech';
 
@@ -17,6 +19,8 @@ const modelParams = {
   scoreThreshold: 0.6, // confidence threshold for predictions.
 }
 const VIDEO_INTERVAL = 500
+const VIDEO_WIDTH = 344
+const VIDEO_HEIGHT = 260
 
 const distance = (point1, point2) => Math.abs(point1 - point2)
 
@@ -65,6 +69,15 @@ export class HandTrack extends React.Component {
       if (this.qrScanner) {
         this.qrScanner.stop();
         this.qrScanner = null;
+      }
+
+      if (this.socket) {
+        try {
+          this.socket.close();
+        }
+        catch {
+          // ignores
+        }
       }
 
       this.setState({
@@ -173,6 +186,14 @@ export class HandTrack extends React.Component {
       const dataObject = JSON.parse(data);
       if (dataObject.type === 'result' && dataObject.data) {
         this.disableVideo();
+        console.log(dataObject.data)
+        if (this.props.addUserMessage) {
+          const menuItem = menu.find(item => item.intent_name === dataObject.data)
+          console.log(menuItem)
+          if (menuItem) {
+            this.props.addUserMessage(menuItem.name);
+          }
+        }
       }
     }
     catch {
@@ -191,24 +212,24 @@ export class HandTrack extends React.Component {
             Close
           </Button>,
         ]}
-        width={920}
+        width={VIDEO_WIDTH + 40}
       >
         <Row>
           {this.state.modelLoading && <div>Loading model....</div>}
-          <div style={{ width: 860, height: 648, position: 'relative' }}>
+          <div style={{ width: VIDEO_WIDTH, height: VIDEO_HEIGHT, position: 'relative' }}>
             <video 
               ref={this.qrVideoElement} 
               autoPlay="autoplay"
-              width="860"
-              height="648"
+              width={VIDEO_WIDTH}
+              height={VIDEO_HEIGHT}
               style={{ position: 'absolute', left: 0, top: 0, bottom: 0, right: 0, }} 
             />
             <video 
               ref={this.videoElement}
               // onSeeked={this.handleVideoSeeked}
               autoPlay="autoplay"
-              width="860"
-              height="648"
+              width={VIDEO_WIDTH}
+              height={VIDEO_HEIGHT}
               style={{ position: 'absolute', left: 0, top: 0, bottom: 0, right: 0, }} 
             />
             <canvas
