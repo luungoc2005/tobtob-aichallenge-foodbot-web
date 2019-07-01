@@ -13,12 +13,19 @@ export const Cart = () => <AppContext.Consumer>
         <Col span={18}>Item</Col>
         <Col span={6} style={{ textAlign: 'right' }}>Qty</Col>
       </Row>}
-      footer={<Row style={{ color: 'white' }}>
+      footer={<><Row style={{ color: 'white' }}>
         <Col span={18}>Total</Col>
         <Col span={6} style={{ textAlign: 'right' }}>{
           (context.cart.map(item => item.qTy * item.price).reduce((a, b) => a + b, 0)).toFixed(3)
-        }</Col>
-      </Row>}
+        } VND</Col>
+      </Row>
+      <Row style={{ color: 'white' }}>
+        <Col span={18}><small>Calories</small></Col>
+        <Col span={6} style={{ textAlign: 'right' }}><small>{
+          (context.cart.map(item => item.qTy * item.kcal).reduce((a, b) => a + b, 0))
+        } kCal</small></Col>
+      </Row>
+      </>}
       renderItem={(item) => <List.Item key={item.id} style={{ flexDirection: 'column' }}>
         <Row style={{ color: 'white', width: '100%' }}>
           <Col span={18}>

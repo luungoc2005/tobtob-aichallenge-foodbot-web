@@ -75,7 +75,7 @@ export class Speech extends React.Component {
     }
     else {
       return <>
-        <Button onClick={this.startRecognition}>{transcribing ? 'Stop Listening' : 'Start Listening'}</Button>
+        <Button shape="cỉcle" icon={transcribing ? 'stop' : 'audio'} onClick={this.startRecognition}>{transcribing ? 'Stop Listening' : 'Start Listening'}</Button>
         {!this.props.hideTranscript && <div><span>{transcript}</span><span>{' ' + intermediate_transcript}</span></div>}
       </>
     }

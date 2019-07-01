@@ -203,7 +203,7 @@ export class HandTrack extends React.Component {
 
   render() {
     return <div style={{ width: '215px', height: '162px' }}>
-      {!this.state.enabled && <Button onClick={this.enableVideo}>Enable Video</Button>}
+      {!this.state.enabled && <Button icon="video-camera" onClick={this.enableVideo}>Start Video</Button>}
       <Modal
         visible={this.state.enabled}
         onCancel={this.disableVideo}

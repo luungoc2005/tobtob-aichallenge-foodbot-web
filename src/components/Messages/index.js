@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 
-import { Comment, Row, Col, Icon, Tooltip, Avatar } from 'antd';
+import { Comment, Row, Col, Input, Icon, Tooltip, Avatar } from 'antd';
 
 import { v4 } from 'uuid';
 
@@ -33,6 +33,7 @@ export const MessagesContext = createContext({
 export class Messages extends React.Component {
   state = {
     messageHistory: DEFAULT_MESSAGES,
+    inputValue: '',
   }
 
   currentMessageId = null;
@@ -103,6 +104,16 @@ export class Messages extends React.Component {
     })
   }
 
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.addUserMessage(this.state.inputValue);
+      this.setState({
+        inputValue: '',
+      })
+    }
+  }
+
   render() {
     const { messageHistory } = this.state;
     return (
@@ -126,6 +137,10 @@ export class Messages extends React.Component {
         <div style={{ height: 10 }} />
         <AppContext.Consumer>
           {context => <Row>
+              <Input value={this.state.inputValue} 
+                onChange={(e) => this.setState({ inputValue: e.target.value })}
+                onKeyPress={(e) => this.handleKeyPress(e)}
+              />
               <Speech 
                 onIntermediateTranscript={this.onIntermediateTranscript}
                 onFinalTranscript={this.onFinalTranscript}
