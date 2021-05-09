@@ -10,7 +10,7 @@
     "customize-cra": "^0.2.14",
     "handtrackjs": "^0.0.13",
     "instascan": "^1.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "qs": "^6.7.0",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.3",
